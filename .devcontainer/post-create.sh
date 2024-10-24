@@ -18,14 +18,22 @@ sudo apt-get -y update
 sudo apt-get -y dist-upgrade
 sudo apt-get clean
 sudo rm -rf /var/lib/apt/lists/*
+
 sudo chown vscode:vscode /workspaces
+sudo chown -R vscode:vscode /workspaces/majsoul-liqi-json/.venv
 
 # Install uv.
 curl -LsSf https://astral.sh/uv/install.sh | sh
 . "$HOME/.cargo/env"
 uv python install $PYTHON_VERSION --no-progress
 
+export UV_LINK_MODE=copy
+
 pushd /workspaces/majsoul-liqi-json
-rm -rf .venv
+pushd .venv
+rm -rf *
+rm -rf ./.*
+popd
+uv venv
 uv sync
 popd
