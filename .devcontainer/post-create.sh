@@ -27,8 +27,5 @@ uv python install $PYTHON_VERSION --no-progress
 
 pushd /workspaces/majsoul-liqi-json
 rm -rf .venv
-uv venv
-uv pip install -U \
-  jsonschema \
-  types-jsonschema
+uv sync
 popd
