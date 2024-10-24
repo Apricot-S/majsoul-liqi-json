@@ -18,6 +18,9 @@ majsoul-liqi-json$ cat PATH/TO/liqi.json | docker run --rm -i cryolite/majsoul-l
 
 ### Using uv
 
+> [!NOTE]
+> Newline characters depend on the platform.
+
 ```sh
 majsoul-liqi-json$ cat PATH/TO/liqi.json | uv run parse.py > PATH/TO/your-favorite-name.proto
 ```
