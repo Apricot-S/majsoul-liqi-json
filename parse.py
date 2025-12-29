@@ -11,6 +11,15 @@ _IDENTIFIER_PATTERN = "^[a-z_A-Z][0-9a-z_A-Z]*$"
 _OPTIONS_SCHEMA = {
     "type": "object",
     "properties": {
+        "syntax": {"const": "proto3"}
+    },
+    "required": ["syntax"],
+    "additionalProperties": False
+}
+
+_LQ_OPTIONS_SCHEMA = {
+    "type": "object",
+    "properties": {
         "go_package": {"type": "string"},
     },
     "required": ["go_package"],
@@ -106,13 +115,14 @@ _LQ_SCHEMA = {
 _SCHEMA = {
     "type": "object",
     "properties": {
+        "options": _OPTIONS_SCHEMA,
         "nested": {
             "type": "object",
             "properties": {
                 "lq": {
                     "type": "object",
                     "properties": {
-                        "options": _OPTIONS_SCHEMA,
+                        "options": _LQ_OPTIONS_SCHEMA,
                         "nested": _LQ_SCHEMA,
                     },
                     "required": ["nested"],
@@ -123,7 +133,7 @@ _SCHEMA = {
             "additionalProperties": False,
         },
     },
-    "required": ["nested"],
+    "required": ["options", "nested"],
     "additionalProperties": False,
 }
 

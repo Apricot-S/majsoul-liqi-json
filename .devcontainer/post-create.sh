@@ -20,7 +20,6 @@ sudo chown vscode:vscode /workspaces
 
 # Install uv.
 curl -LsSf https://astral.sh/uv/install.sh | sh
-. "$HOME/.cargo/env"
 uv python install --no-progress
 
 pushd /workspaces/majsoul-liqi-json
