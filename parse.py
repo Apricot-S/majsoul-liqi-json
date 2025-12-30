@@ -158,7 +158,9 @@ def _parse_service(service_name: str, service_spec: dict[str, dict]) -> str:
 
 
 def _parse_message(
-    indent: int, message_name: str, message_spec: dict[str, dict],
+    indent: int,
+    message_name: str,
+    message_spec: dict[str, dict],
 ) -> str:
     result = (" " * indent) + "message " + message_name + " {\n"
     lines = []
