@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 ARG PYTHON_VERSION=3.12
-ARG OS_VERSION=bookworm
+ARG OS_VERSION=trixie
 FROM python:${PYTHON_VERSION}-slim-${OS_VERSION} AS base
 
 FROM base AS builder
