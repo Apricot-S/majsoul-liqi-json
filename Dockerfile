@@ -5,7 +5,7 @@ ARG OS_VERSION=bookworm
 FROM python:${PYTHON_VERSION}-slim-${OS_VERSION} AS base
 
 FROM base AS builder
-COPY --from=ghcr.io/astral-sh/uv:0.6 /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:0.9 /uv /uvx /bin/
 
 WORKDIR /workspace
 
