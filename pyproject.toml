@@ -5,12 +5,12 @@ description = "Generate .proto file from MahjongSoul liqi.json"
 authors = [
     { name = "Cryolite", email = "cryolite.indigo@gmail.com" },
 ]
-license = { text = "MIT License" }
+license = "MIT"
+license-files = ["LICENSE"]
 readme = "README.md"
 requires-python = ">=3.12"
 classifiers = [
     "Private :: Do Not Upload",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
