@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+PYTHON_VERSION=3.12
+
 PS4='+${BASH_SOURCE[0]}:$LINENO: '
 if [[ -t 1 ]] && type -t tput >/dev/null; then
   if (( "$(tput colors)" == 256 )); then
@@ -20,12 +22,9 @@ sudo chown vscode:vscode /workspaces
 
 # Install uv.
 curl -LsSf https://astral.sh/uv/install.sh | sh
-uv python install --no-progress
+uv python install $PYTHON_VERSION --no-progress
 
 pushd /workspaces/majsoul-liqi-json
 rm -rf .venv
-uv venv
-uv pip install -U \
-  jsonschema \
-  types-jsonschema
+uv sync
 popd
