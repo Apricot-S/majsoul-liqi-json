@@ -25,7 +25,7 @@ Repository = "https://github.com/Cryolite/majsoul-liqi-json.git"
 [tool.uv]
 package = false
 dev-dependencies = [
-    "mypy>=1.12.1,<2",
+    "mypy>=1.19.1,<2",
     "ruff>=0.14.10,<0.15",
     "types-jsonschema>=4.23.0.20240813",
 ]
