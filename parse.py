@@ -11,10 +11,10 @@ _IDENTIFIER_PATTERN = "^[a-z_A-Z][0-9a-z_A-Z]*$"
 _OPTIONS_SCHEMA = {
     "type": "object",
     "properties": {
-        "syntax": {"const": "proto3"}
+        "syntax": {"const": "proto3"},
     },
     "required": ["syntax"],
-    "additionalProperties": False
+    "additionalProperties": False,
 }
 
 _LQ_OPTIONS_SCHEMA = {
